@@ -1,0 +1,99 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 >> syms k1 k2 k3 k4 k5 k6 a b c ab cb\
+>> eqn1 = 0 == -k1 * a * b + k2 * ab + k6 * cb\
+ \
+eqn1 =\
+ \
+0 == ab*k2 + cb*k6 - a*b*k1\
+ \
+>> eqn2 = 0 == k1 * a * b - k2 * ab - k3 * ab\
+ \
+eqn2 =\
+ \
+0 == a*b*k1 - ab*k3 - ab*k2\
+ \
+>> eqn3 = 0 == 2 * k3 * ab - k1 * a * b + k2 * ab - k4 * b * c -+ k5 * cb\
+ \
+eqn3 =\
+ \
+0 == ab*k2 + 2*ab*k3 - cb*k5 - a*b*k1 - b*c*k4\
+ \
+>> eqn4 = 0 == k4 * b * c - k5 * cb - k6 * cb\
+ \
+eqn4 =\
+ \
+0 == b*c*k4 - cb*k6 - cb*k5\
+ \
+>> eqn5 = 0 == -k4 * b * c - k5 * cb + k6 * cb\
+ \
+eqn5 =\
+ \
+0 == cb*k6 - cb*k5 - b*c*k4\
+ \
+>> s = solve([eqn1, eqn2, eqn3, eqn4, eqn5], [a, b, c, ab, cb], 'ReturnConditions', true)\
+\
+s = \
+\
+  struct with fields:\
+\
+             a: [2\'d71 sym]\
+             b: [2\'d71 sym]\
+             c: [2\'d71 sym]\
+            ab: [2\'d71 sym]\
+            cb: [2\'d71 sym]\
+    parameters: [1\'d74 sym]\
+    conditions: [2\'d71 sym]\
+\
+>> s.conditions\
+ \
+ans =\
+ \
+ z2 ~= 0\
+    TRUE\
+ \
+>> s.parameters\
+ \
+ans =\
+ \
+[ z, z2, z3, z4]\
+ \
+>> s.a\
+ \
+ans =\
+ \
+ (z3*k2)/(z2*k1)\
+               z\
+ \
+>> s.b\
+ \
+ans =\
+ \
+ z2\
+  0\
+ \
+>> s.c\
+ \
+ans =\
+ \
+  z\
+ z2\
+ \
+>> s.ab\
+ \
+ans =\
+ \
+ z3\
+  0\
+ \
+>> s.cb\
+ \
+ans =\
+ \
+ z4\
+ z3}

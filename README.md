@@ -1,2 +1,2 @@
 # CAMP-2018
-This is one of tiny and amazing projects we did during CAMP 2018 at Bangalore, India.
+This is one of the tiny and amazing projects we did during CAMP 2018 at Bangalore, India.
